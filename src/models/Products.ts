@@ -1,3 +1,5 @@
+import { calculateDiscount } from "../utils/discountCalculator.js";
+
 export interface ProductApiResponse {
   id: number;
   title: string;
@@ -20,16 +22,24 @@ export class Product {
     this.title = data.title;
     this.description = data.description;
     this.category = data.category;
-    this.price = data.price;
+    this.price = Math.round(data.price * 100);
     this.discountPercentage = data.discountPercentage
   }
 
   displayDetails() {
-
+    console.log(`--- Product Details ---`);
+    console.log(`ID:    ${this.id}`);
+    console.log(`Title:  ${this.title}`);
+    console.log(`Description: ${this.description}`);
+    console.log(`Category: ${this.category}`)
+    console.log(`Price: $${Math.round(this.price / 100)}`);
+    console.log(`Discount Percentage: ${this.discountPercentage}%`)
+    console.log(`-----------------------`);
   }
 
   getPriceWithDiscount() {
-    
+    let discount = calculateDiscount(this.price, this.discountPercentage)
+    return this.price - discount;
   }
 }
 

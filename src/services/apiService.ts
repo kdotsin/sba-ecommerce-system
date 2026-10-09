@@ -1,6 +1,6 @@
 import { NetworkError } from "../utils/errorHandler.js";
 
-async function fetchProducts() {
+export async function fetchProducts() {
   try {
     const response = await
     fetch('https://dummyjson.com/products')
