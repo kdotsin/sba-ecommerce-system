@@ -4,3 +4,10 @@ export class NetworkError extends Error {
     this.name = 'NetworkError';
   }
 }
+
+export class ApiError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = 'ApiError';
+  }
+}
