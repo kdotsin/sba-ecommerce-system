@@ -32,7 +32,7 @@ export class Product {
     console.log(`Title:  ${this.title}`);
     console.log(`Description: ${this.description}`);
     console.log(`Category: ${this.category}`)
-    console.log(`Price: $${Math.round(this.price / 100)}`);
+    console.log(`Price: $${Math.round(this.price) / 100}`);
     console.log(`Discount Percentage: ${this.discountPercentage}%`)
     console.log(`-----------------------`);
   }
